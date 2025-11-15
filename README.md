@@ -1,25 +1,34 @@
-# EXPENSE-TRACKER-
 expenses = []
 
 def add_expense():
     date = input("Enter date (DD-MM-YYYY): ")
-    category = input("Enter category (Food, Travel, etc.): ")
+    category = input("Enter category (Food, Travel, Shopping, etc.): ")
     amount = float(input("Enter amount: ₹ "))
-    expenses.append({"date": date, "category": category, "amount": amount})
-    print("✅ Expense added successfully.\n")
+    
+    expenses.append({
+        "date": date,
+        "category": category,
+        "amount": amount
+    })
+    
+    print("✅ Expense added successfully!\n")
+
 
 def view_expenses():
     if not expenses:
         print("No expenses recorded.\n")
         return
+    
     print("\n--- Expense List ---")
     for i, expense in enumerate(expenses, 1):
         print(f"{i}. {expense['date']} | {expense['category']} | ₹ {expense['amount']}")
     print()
 
+
 def total_expenses():
     total = sum(exp['amount'] for exp in expenses)
     print(f"\n💰 Total Expenses: ₹ {total}\n")
+
 
 def main():
     while True:
@@ -27,7 +36,7 @@ def main():
         print("1. Add Expense")
         print("2. View Expenses")
         print("3. Total Expenses")
-        print("4. Exit")
+        print("4. Exit\n")
 
         choice = input("Choose an option (1-4): ")
 
@@ -38,10 +47,11 @@ def main():
         elif choice == '3':
             total_expenses()
         elif choice == '4':
-            print("Exiting... Goodbye!")
+            print("Exiting... Goodbye! 👋")
             break
         else:
             print("Invalid choice. Please enter 1-4.\n")
 
-if _name_ == "_main_":
+
+if __name__ == "__main__":
     main()
