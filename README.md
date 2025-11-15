@@ -1,3 +1,6 @@
+
+    ```python
+# your code here
 expenses = []
 
 def add_expense():
@@ -55,3 +58,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+---
